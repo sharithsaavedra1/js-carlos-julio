@@ -19,7 +19,10 @@
     <button onclick="miApp.openModal('lista')">Lista</button>
     <button onclick="miApp.openModal('form')">Formulario</button>
     <button onclick="miApp.openModal('calculadora')">Calculadora</button>
+     <button onclick="miApp.openModal('listaEliminar')">Lista con Eliminar</button>
     <button onclick="miApp.openModal('temporizador')">Temporizador</button>
+ 
+   
 </div>
 
 <img src="img/gato.jpg" class="gato-img">
@@ -104,7 +107,17 @@
         <button class="actionBtn close" onclick="miApp.closeModal('calculadora')">Cerrar</button>
     </div>
 </div>
+<div class="modal" id="listaEliminar">
+    <div class="modal-content">
+        <h2>Lista con Eliminación</h2>
+        <input id="itemEliminar" placeholder="Nueva tarea...">
+        <button class="actionBtn" onclick="miApp.agregarConEliminar()">Agregar</button>
+        
+        <ul id="listEliminar" style="text-align: left; list-style: none; padding: 0; margin-top: 20px;"></ul>
 
+        <button class="actionBtn close" onclick="miApp.closeModal('listaEliminar')">Cerrar</button>
+    </div>
+</div>
 <div class="modal" id="temporizador">
     <div class="modal-content">
         <h2>Temporizador</h2>

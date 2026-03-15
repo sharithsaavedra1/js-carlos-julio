@@ -17,8 +17,8 @@ class App {
     // --- COMPONENTES ---
     mensaje() {
         Swal.fire({
-            title: "Hola",
-            text: "Este mensaje se muestra con SweetAlert y POO",
+            title: "💻",
+            text: "Hola mundo desde JavaScript",
             icon: "success"
         });
     }
@@ -53,7 +53,7 @@ class App {
         document.getElementById("count").textContent = this.count;
     }
 
-    // --- LISTA ---
+    // --- LISTA BÁSICA ---
     agregarItem() {
         const input = document.getElementById("item");
         const text = input.value.trim();
@@ -62,7 +62,36 @@ class App {
         const li = document.createElement("li");
         li.textContent = text;
         document.getElementById("list").appendChild(li);
-        input.value = ""; // Limpia el input
+        input.value = "";
+    }
+
+    // --- LISTA CON ELIMINAR (Nivel 3) ---
+    agregarConEliminar() {
+        const input = document.getElementById("itemEliminar");
+        const text = input.value.trim();
+        
+        if (text === "") {
+            return Swal.fire("Aviso", "Escribe algo para agregar", "warning");
+        }
+
+        const li = document.createElement("li");
+        li.style.display = "flex";
+        li.style.justifyContent = "space-between";
+        li.style.alignItems = "center";
+        li.style.marginBottom = "10px";
+        li.innerHTML = `<span>${text}</span>`;
+
+        const btnBorrar = document.createElement("button");
+        btnBorrar.textContent = "Eliminar";
+        btnBorrar.className = "actionBtn close";
+        btnBorrar.style.margin = "0";
+        btnBorrar.style.padding = "5px 10px";
+        
+        btnBorrar.onclick = () => li.remove();
+
+        li.appendChild(btnBorrar);
+        document.getElementById("listEliminar").appendChild(li);
+        input.value = ""; 
     }
 
     // --- VALIDACIÓN ---
@@ -113,7 +142,7 @@ class App {
         this.tiempo = 0;
         document.getElementById("tiempo").textContent = 0;
     }
-}
+} 
 
 // Instanciamos la clase para que el objeto "miApp" controle todo
 const miApp = new App();
