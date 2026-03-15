@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Práctica JavaScript Pro</title>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<link rel="stylesheet" href="css/styles.css">
-
+    <meta charset="UTF-8">
+    <title>Práctica JavaScript Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
 <h1>Práctica JavaScript</h1>
-
-
 
 <div class="menu">
     <button onclick="miApp.openModal('mensaje')">Mensaje</button>
@@ -26,165 +22,100 @@
     <button onclick="miApp.openModal('temporizador')">Temporizador</button>
 </div>
 
-
 <img src="img/gato.jpg" class="gato-img">
 
-<!-- MENSAJE -->
 <div class="modal" id="mensaje">
-<div class="modal-content">
-
-<h2>Mensaje</h2>
-
-<button class="actionBtn" onclick="mensaje()">Mostrar mensaje</button>
-
-<br>
-<button class="actionBtn close" onclick="miApp.closeModal('mensaje')">Cerrar</button>
-
-</div>
+    <div class="modal-content">
+        <h2>Mensaje</h2>
+        <button class="actionBtn" onclick="miApp.mensaje()">Mostrar mensaje</button>
+        <br>
+        <button class="actionBtn close" onclick="miApp.closeModal('mensaje')">Cerrar</button>
+    </div>
 </div>
 
-
-<!-- SUMA -->
 <div class="modal" id="suma">
-<div class="modal-content">
-
-<h2>Suma</h2>
-
-<input id="n1" type="number" placeholder="Número 1">
-<input id="n2" type="number" placeholder="Número 2">
-
-<br>
-
-<button class="actionBtn" onclick="sumar()">Sumar</button>
-
-<p id="resultado"></p>
-
-<button class="actionBtn close" onclick="miApp.closeModal('suma')">Cerrar</button>
-
-</div>
+    <div class="modal-content">
+        <h2>Suma</h2>
+        <input id="n1" type="number" placeholder="Número 1">
+        <input id="n2" type="number" placeholder="Número 2">
+        <br>
+        <button class="actionBtn" onclick="miApp.sumar()">Sumar</button>
+        <p id="resultado"></p>
+        <button class="actionBtn close" onclick="miApp.closeModal('suma')">Cerrar</button>
+    </div>
 </div>
 
-
-<!-- COLOR -->
 <div class="modal" id="color">
-<div class="modal-content">
-
-<h2>Cambiar color</h2>
-
-<button class="colorBtn" style="background:#f9a8d4" onclick="color('#f9a8d4')"></button>
-<button class="colorBtn" style="background:#f472b6" onclick="color('#f472b6')"></button>
-<button class="colorBtn" style="background:#fb7185" onclick="color('#fb7185')"></button>
-
-<br><br>
-
-<button class="actionBtn close" onclick="miApp.closeModal('color')">Cerrar</button>
-
-</div>
+    <div class="modal-content">
+        <h2>Cambiar color</h2>
+        <button class="colorBtn" style="background:#f9a8d4" onclick="miApp.cambiarColor('#f9a8d4')"></button>
+        <button class="colorBtn" style="background:#f472b6" onclick="miApp.cambiarColor('#f472b6')"></button>
+        <button class="colorBtn" style="background:#fb7185" onclick="miApp.cambiarColor('#fb7185')"></button>
+        <br><br>
+        <button class="actionBtn close" onclick="miApp.closeModal('color')">Cerrar</button>
+    </div>
 </div>
 
-
-<!-- CONTADOR -->
 <div class="modal" id="contador">
-<div class="modal-content">
-
-<h2>Contador</h2>
-
-<h3 id="count">0</h3>
-
-<button class="actionBtn" onclick="add()">+</button>
-<button class="actionBtn" onclick="sub()">-</button>
-<button class="actionBtn" onclick="resetCount()">Reset</button>
-
-<br><br>
-
-<button class="actionBtn close" onclick="miApp.closeModal('contador')">Cerrar</button>
-
-</div>
+    <div class="modal-content">
+        <h2>Contador</h2>
+        <h3 id="count">0</h3>
+        <button class="actionBtn" onclick="miApp.add()">+</button>
+        <button class="actionBtn" onclick="miApp.sub()">-</button>
+        <button class="actionBtn" onclick="miApp.resetCount()">Reset</button>
+        <br><br>
+        <button class="actionBtn close" onclick="miApp.closeModal('contador')">Cerrar</button>
+    </div>
 </div>
 
-
-<!-- LISTA -->
 <div class="modal" id="lista">
-<div class="modal-content">
-
-<h2>Lista</h2>
-
-<input id="item">
-
-<button class="actionBtn" onclick="agregar()">Agregar</button>
-
-<ul id="list"></ul>
-
-<button class="actionBtn close" onclick="miApp.closeModal('lista')">Cerrar</button>
-
-</div>
+    <div class="modal-content">
+        <h2>Lista</h2>
+        <input id="item">
+        <button class="actionBtn" onclick="miApp.agregarItem()">Agregar</button>
+        <ul id="list"></ul>
+        <button class="actionBtn close" onclick="miApp.closeModal('lista')">Cerrar</button>
+    </div>
 </div>
 
-
-<!-- FORM -->
 <div class="modal" id="form">
-<div class="modal-content">
-
-<h2>Formulario</h2>
-
-<input id="nombre" placeholder="Nombre">
-<input id="correo" placeholder="Correo">
-<input id="edad" type="number" placeholder="Edad">
-
-<br>
-
-<button class="actionBtn" onclick="validar()">Enviar</button>
-
-<button class="actionBtn close" onclick="miApp.closeModal('form')">Cerrar</button>
-
-</div>
+    <div class="modal-content">
+        <h2>Formulario</h2>
+        <input id="nombre" placeholder="Nombre">
+        <input id="correo" placeholder="Correo">
+        <input id="edad" type="number" placeholder="Edad">
+        <br>
+        <button class="actionBtn" onclick="miApp.validarFormulario()">Enviar</button>
+        <button class="actionBtn close" onclick="miApp.closeModal('form')">Cerrar</button>
+    </div>
 </div>
 
-
-<!-- CALCULADORA -->
 <div class="modal" id="calculadora">
-<div class="modal-content">
-
-<h2>Calculadora</h2>
-
-<input id="a" type="number">
-<input id="b" type="number">
-
-<br>
-
-<button class="actionBtn" onclick="calc('+')">+</button>
-<button class="actionBtn" onclick="calc('-')">-</button>
-<button class="actionBtn" onclick="calc('*')">*</button>
-<button class="actionBtn" onclick="calc('/')">/</button>
-
-<p id="calcRes"></p>
-
-<button class="actionBtn close" onclick="miApp.closeModal('calculadora')">Cerrar</button>
-
-</div>
+    <div class="modal-content">
+        <h2>Calculadora</h2>
+        <input id="a" type="number">
+        <input id="b" type="number">
+        <br>
+        <button class="actionBtn" onclick="miApp.calc('+')">+</button>
+        <button class="actionBtn" onclick="miApp.calc('-')">-</button>
+        <button class="actionBtn" onclick="miApp.calc('*')">*</button>
+        <button class="actionBtn" onclick="miApp.calc('/')">/</button>
+        <p id="calcRes"></p>
+        <button class="actionBtn close" onclick="miApp.closeModal('calculadora')">Cerrar</button>
+    </div>
 </div>
 
-
-<!-- TEMPORIZADOR -->
 <div class="modal" id="temporizador">
-<div class="modal-content">
-
-<h2>Temporizador</h2>
-
-<h3><span id="tiempo">0</span> s</h3>
-
-<button class="actionBtn" onclick="start()">Iniciar</button>
-<button class="actionBtn" onclick="stop()">Detener</button>
-<button class="actionBtn" onclick="reset()">Reset</button>
-
-<br>
-
-<button class="actionBtn close" onclick="miApp.closeModal('temporizador')">Cerrar</button>
-
+    <div class="modal-content">
+        <h2>Temporizador</h2>
+        <h3><span id="tiempo">0</span> s</h3>
+        <button class="actionBtn" onclick="miApp.startTimer()">Iniciar</button>
+        <button class="actionBtn" onclick="miApp.stopTimer()">Detener</button>
+        <button class="actionBtn" onclick="miApp.resetTimer()">Reset</button>
+        <br>
+        <button class="actionBtn close" onclick="miApp.closeModal('temporizador')">Cerrar</button>
+    </div>
 </div>
-</div>
-
-
 
 <script src="js/script.js"></script>
 
