@@ -1,0 +1,148 @@
+
+        /* CSS UNIFICADO - ESTILO ROSITA PASTEL */
+        :root {
+            --pink-light: #fce4ec;
+            --pink-soft: #f8bbd0;
+            --pink-main: #f06292;
+            --pink-dark: #ad1457;
+            --white: #ffffff;
+            --text: #4a4a4a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            background-color: var(--pink-light);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* Barra Lateral */
+        .sidebar {
+            width: 280px;
+            background: var(--white);
+            padding: 20px;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: fixed;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            color: var(--pink-main);
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .sidebar button {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 12px;
+            background: var(--pink-light);
+            color: var(--pink-dark);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .sidebar button:hover {
+            background: var(--pink-main);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* Contenido Principal */
+        .content {
+            margin-left: 320px;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            margin-bottom: 30px;
+        }
+
+        h1, h2 { color: var(--pink-dark); }
+
+        /* Formularios */
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 12px;
+            border: 2px solid var(--pink-light);
+            border-radius: 10px;
+            outline: none;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        input:focus { border-color: var(--pink-main); }
+
+        .btn-add {
+            background: var(--pink-main);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Grilla de Resultados */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .item-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 6px solid var(--pink-main);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .bg-success { background: #c8e6c9; color: #2e7d32; }
+        .bg-danger { background: #ffcdd2; color: #c62828; }
+
+        .btn-small {
+            padding: 8px 12px;
+            margin: 5px 2px 0 0;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+  

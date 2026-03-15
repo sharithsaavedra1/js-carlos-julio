@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Integrados - Estilo Pastel 🌸</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    
+<body>
+
+    <nav class="sidebar">
+        <h2>🌸 Menú </h2>
+        <button onclick="ui.showSection('sec-banco')">Cuentas Bancarias</button>
+        <button onclick="ui.showSection('sec-inventario')">Inventario Tienda</button>
+        <button onclick="ui.showSection('sec-estudiantes')"> Registro Estudiantes</button>
+        <button onclick="ui.showSection('sec-carrito')"> Carrito de Compras</button>
+        <button onclick="ui.showSection('sec-vehiculos')"> Control Vehículos</button>
+        <button onclick="ui.showSection('sec-biblioteca')">Sistema Biblioteca</button>
+    </nav>
+
+    <main class="content">
+        
+        <div id="welcome" class="section" style="display: block;">
+            <h1>Bienvenid@</h1>
+            <p>Selecciona un sistema en el menú para gestionar tus datos con estilo.</p>
+        </div>
+
+        <section id="sec-banco" class="section">
+            <h2>Sistema de Cuentas Bancarias</h2>
+            <div class="card">
+                <div class="form-group">
+                    <input id="bn-titular" placeholder="Nombre del titular">
+                    <button class="btn-add" onclick="ui.addCuenta()">Abrir Cuenta</button>
+                </div>
+            </div>
+            <div id="list-banco" class="grid"></div>
+        </section>
+
+        <section id="sec-inventario" class="section">
+            <h2>Inventario de Tecnología</h2>
+            <div class="card">
+                <div class="form-group">
+                    <input id="inv-nombre" placeholder="Producto">
+                    <input id="inv-precio" type="number" placeholder="Precio">
+                    <input id="inv-stock" type="number" placeholder="Stock">
+                    <button class="btn-add" onclick="ui.addProducto()">Registrar</button>
+                </div>
+            </div>
+            <div id="list-inventario" class="grid"></div>
+        </section>
+
+        <section id="sec-estudiantes" class="section">
+            <h2>Registro de Estudiantes</h2>
+            <div class="card">
+                <div class="form-group">
+                    <input id="est-nombre" placeholder="Nombre del estudiante">
+                    <input id="est-nota" type="number" step="0.1" placeholder="Nota Final (0-5)">
+                    <button class="btn-add" onclick="ui.addEstudiante()">Inscribir</button>
+                </div>
+            </div>
+            <div id="list-estudiantes" class="grid"></div>
+        </section>
+
+        <section id="sec-carrito" class="section">
+            <h2>Carrito de Compras</h2>
+            <div class="card">
+                <div class="form-group">
+                    <input id="car-nombre" placeholder="Artículo">
+                    <input id="car-precio" type="number" placeholder="Precio">
+                    <button class="btn-add" onclick="ui.addAlCarrito()">Añadir</button>
+                </div>
+                <h3>Total Carrito: <span id="car-total">$0</span></h3>
+            </div>
+            <div id="list-carrito" class="grid"></div>
+        </section>
+
+        <section id="sec-vehiculos" class="section">
+            <h2>Control de Velocidad</h2>
+            <div class="card">
+                <div class="form-group">
+                    <input id="veh-placa" placeholder="Placa o ID">
+                    <button class="btn-add" onclick="ui.addVehiculo()">Registrar Vehículo</button>
+                </div>
+            </div>
+            <div id="list-vehiculos" class="grid"></div>
+        </section>
+
+        <section id="sec-biblioteca" class="section">
+            <h2>Biblioteca Virtual</h2>
+            <div class="card">
+                <div class="form-group">
+                    <input id="lib-titulo" placeholder="Título del libro">
+                    <input id="lib-autor" placeholder="Autor">
+                    <button class="btn-add" onclick="ui.addLibro()">Añadir Libro</button>
+                </div>
+            </div>
+            <div id="list-biblioteca" class="grid"></div>
+        </section>
+
+    </main>
+
+   <script src="js/Models.js"></script>
+    <script src="js/App.js"></script>
+</body>
+</html>
